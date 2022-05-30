@@ -28,12 +28,17 @@ class Menu:
     def handleChoice(self, key):
         match key:
             case "p":
-                timer = Timer(self.stdscr, "Pomodoro", 25, 0)
-                timer.loop()
+                self.startTimer("Pomodoro", 25, 0)
+            case "s":
+                self.startTimer("Short Break", 5, 0)
             case "q":
                 quit()
 
         self.makeMenu()
+
+    def startTimer(self, title, minutes, seconds):
+        timer = Timer(self.stdscr, title, minutes, seconds)
+        timer.loop()
 
 
 class Timer:
