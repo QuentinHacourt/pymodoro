@@ -31,6 +31,8 @@ class Menu:
                 self.startTimer("Pomodoro", 25, 0)
             case "s":
                 self.startTimer("Short Break", 5, 0)
+            case "l":
+                self.startTimer("Long Break", 15, 0)
             case "q":
                 quit()
 
