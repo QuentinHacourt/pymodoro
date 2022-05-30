@@ -7,18 +7,18 @@ def writeWord(y, x, word, stdscr):
 
 def main(stdscr):
     stdscr.clear()
-    begin_x = 20; begin_y = 7
-    height = 5; width = 40
-    win = curses.newwin(height, width, begin_y, begin_x)
 
-    stdscr.addstr(3, 10, 'What do you want to do?')
+    stdscr.addstr(3, 10, mainMenuTitle)
 
-    writeWord(5, 10, 'Pomodoro', stdscr)
-    writeWord(6, 10, 'Short Break', stdscr)
-    writeWord(7, 10, 'Long Break', stdscr)
-    writeWord(8, 10, 'Quit', stdscr)
+    i = 5
+    for menuItem in mainMenuItems:
+        writeWord(i, 10, menuItem, stdscr)
+        i +=1
 
     stdscr.refresh()
     stdscr.getkey()
 
+
+mainMenuTitle = 'What do you want to do?'
+mainMenuItems = [ 'Pomodoro', 'Short Break', 'Long Break', 'Quit' ]
 wrapper(main)
